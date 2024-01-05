@@ -1,1 +1,1 @@
-kmosa.github.io
+https://grmpyktn11.github.io/kmoosa/
