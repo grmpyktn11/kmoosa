@@ -3,6 +3,7 @@ body {
     color: #404142;
     font-size: 16px;
 	letter-spacing: 0.8px;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 200;
@@ -151,18 +152,30 @@ a:hover, a:focus, a:active, a:visited {
 	-webkit-transition: all 0.3s;
   	-moz-transition: all 0.3s;
   	transition: all 0.3s;
-  	margin-right: 20px;
+  	margin-right: 2%;
   	border: 3px solid #f6f6f6;
     border-radius: 5px;
 }
+.speaker .feature img {
+    width: 40%; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the images horizontally */
+    border-radius: 50%; /* Make the images circular */
+    object-fit: cover; /* Ensure the entire image is visible within the circle */
+}
+
+
+
 .speaker .feature:hover {
     box-shadow: 3px 3px 10px #ccc;
     transform: translateY(-10px);
 }
 .speaker-img {
-	max-width: 40%;
+	
     border: 4px solid #efefef;
     border-radius: 50%;
+    
 }
 ul.speaker-social li {
 	list-style: none;
