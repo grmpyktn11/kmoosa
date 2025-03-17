@@ -164,6 +164,9 @@
 .ti-layout:before {
 	content: "\e62e";
 }
+.ti-layers{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
+}
 .ti-layers:before {
 	content: "\e62f";
 }
@@ -505,6 +508,9 @@
 }
 .ti-gift:before {
 	content: "\e6a0";
+}
+.ti-game{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
 }
 .ti-game:before {
 	content: "\e6a1";
@@ -911,11 +917,17 @@
 .ti-brush-alt:before {
 	content: "\e727";
 }
+.ti-youtube{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
+}
 .ti-youtube:before {
 	content: "\e728";
 }
 .ti-vimeo:before {
 	content: "\e729";
+}
+.ti-twitter{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
 }
 .ti-twitter:before {
 	content: "\e72a";
@@ -950,6 +962,9 @@
 .ti-list-ol:before {
 	content: "\e734";
 }
+.ti-linkedin{
+
+}
 .ti-linkedin:before {
 	content: "\e735";
 }
@@ -974,11 +989,17 @@
 .ti-layout-column2-alt:before {
 	content: "\e73c";
 }
+.ti-instagram{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
+}
 .ti-instagram:before {
 	content: "\e73d";
 }
 .ti-google:before {
 	content: "\e73e";
+}
+.ti-github{
+	filter: invert(79%) sepia(5%) saturate(107%) hue-rotate(303deg) brightness(95%) contrast(95%);
 }
 .ti-github:before {
 	content: "\e73f";
@@ -1015,6 +1036,9 @@
 }
 .ti-vimeo-alt:before {
 	content: "\e74a";
+}
+.ti-twitter-alt{
+	filter: invert(95%) sepia(6%) saturate(615%) hue-rotate(69deg) brightness(82%) contrast(86%);
 }
 .ti-twitter-alt:before {
 	content: "\e74b";
