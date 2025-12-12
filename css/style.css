@@ -370,3 +370,12 @@ ul.footer-menu li a:hover {
         margin-right: 9px;
     }
 }
+
+.gadig-logo-img {
+  max-width: 350px;   
+  height: auto;
+}
+
+.gadig-text{
+    max-width: 1000px;
+}
