@@ -48,7 +48,7 @@ PROJECTS = [
    stack='GADIG · WINDOWS · LINUX',
    kao='⋆.˚🎣 ₊˚⊹',
    blurb='A 2&ndash;4 player party game about catching the most fish, where you reel in your catch by playing along to the rhythm.',
-   rant='Master anglers from every corner of existence gather for the Intergalactic Fish Bowl, all hoping to claim the title of Fish Whisperer. You reel your catch in by playing along to the rhythm, and you can trip your friends up while they are trying to do the same.\n\nA GADIG club title. <em>Add what you worked on here.</em>',
+   rant='Master anglers from every corner of existence gather for the Intergalactic Fish Bowl, each hoping to claim the title of Fish Whisperer. Two to four of you compete to land the biggest haul, reeling each catch in by playing along to the rhythm — and tripping each other up while you do it.\n\nA GADIG title, shipped while I was president of the club.',
    links=[('ITCH.IO','https://gadig.itch.io/king-fisher')]),
 
  dict(slug='wkw-ify', title='wkw-ify', year='FEB 2026', kind='TOOL',
@@ -72,7 +72,7 @@ PROJECTS = [
    stack='GADIG · HTML5 · WINDOWS · LINUX',
    kao='⋆.˚🐴 ₊˚⊹',
    blurb='A 2.5D shooter about an exiled gunslinger who comes home to a cursed town overrun by monsters.',
-   rant='An exiled gunslinger returns to town determined to clear their name and save their beloved horse. While they were away the place picked up a curse and a monster problem. You fight strange creatures, talk to the people still living there, and work out what happened in your absence.\n\nA GADIG club title. <em>Add what you worked on here.</em>',
+   rant='An exiled gunslinger rides home to clear their name and save their horse, and finds the town has picked up a curse and a monster problem in their absence. You fight your way through strange creatures, talk to the people still living there, and piece together what happened while you were gone. A 2.5D shooter.\n\nA GADIG title, shipped while I was president of the club.',
    links=[('ITCH.IO','https://gadig.itch.io/deadshot')]),
 
  dict(slug='pptxt', title='pptxt', year='DEC 2025', kind='TOOL',
@@ -116,7 +116,7 @@ PROJECTS = [
    stack='GADIG · HTML5 · WINDOWS',
    kao='˚₊ʚ🧁ɞ₊˚',
    blurb='You are a baker at a new farmer&rsquo;s market, and flirting is not your strong suit &mdash; so you bake at people instead.',
-   rant='You run a bakery in a small town that has just opened a farmer&rsquo;s market. On opening day you spot a few merchants you would like to talk to, discover that flirting is not among your skills, and fall back on what you are good at: handing people baked goods until they like you.\n\nA GADIG club title. <em>Add what you worked on here.</em>',
+   rant='You run a bakery in a small town that has just opened a farmer&rsquo;s market. On opening day you spot a few merchants you would very much like to talk to, discover that flirting is not among your talents, and fall back on the thing you are actually good at: handing people baked goods until they come around.\n\nA GADIG title, shipped while I was president of the club.',
    links=[('ITCH.IO','https://gadig.itch.io/bake-me-crazy')]),
 
  dict(slug='chalets-explore', title='Chalet&rsquo;s Explore', year='FEB 2025', kind='HACK',
@@ -132,7 +132,7 @@ PROJECTS = [
    stack='GADIG · GODOT · GDSCRIPT',
    kao='૮ ˶• ﻌ •˶ ა',
    blurb='Imagine if Link were a dog. The semester we moved the club from Unity to Godot.',
-   rant='A dog sets out to return a stick to its owner, finds a legendary sword along the way, and ends up saving a kingdom from a growing gloom. Puzzles, dungeons, the most grandiose fetch quest of our time.\n\nThis was the GADIG game for Fall 2024, and the semester we moved the whole club from Unity over to Godot. I took a more administrative role on this one, which mostly meant making sure eighty people with different schedules shipped the same game.',
+   rant='A dog sets out to return a stick to its owner, finds a legendary sword along the way, and ends up carrying a kingdom out of a growing gloom. Puzzles, dungeon crawling, and the most grandiose fetch quest of our time.\n\nThe GADIG game for Fall 2024, shipped while I was president, and the semester we moved the whole club from Unity over to Godot. I took a more administrative role on this one, which mostly meant making sure eighty people with different schedules shipped the same game.',
    links=[('ITCH.IO','https://gadig.itch.io/fetch-quest')]),
 
  dict(slug='focusup', title='FocusUp!', year='NOV 2024', kind='TOOL',
@@ -161,7 +161,7 @@ PROJECTS = [
    stack='GADIG · HTML5 · WINDOWS · MACOS · LINUX',
    kao='⋆.˚🍉 ₊˚⊹',
    blurb='A beat-em-up in an overgrown urban wasteland. Four playable fruit, three stages, one question: who packs the biggest punch?',
-   rant='An urban wasteland has been overrun with jungle, and the only reasonable response is a beat-em-up. Three stages, and four playable characters — Apple, Banana, Watermelon and Grapes-Sensei — each with their own action.\n\nA GADIG club title. <em>Add what you worked on here.</em>',
+   rant='An urban wasteland has been overrun by jungle, greenery and woodland, and the only reasonable response is to find out who packs the biggest Fruit Punch. Three beat-em-up stages, and four playable characters — Apple, Banana, Watermelon and Grapes-Sensei — each with their own action.\n\nOne of the GADIG games from before I was president, when I was still just programming for the club.',
    links=[('ITCH.IO','https://gadig.itch.io/fruit-punch')]),
 
  dict(slug='dish-detective', title='Dish Detective', year='MAR 2024', kind='HACK',
@@ -179,7 +179,7 @@ PROJECTS = [
    stack='GADIG · UNITY · C#',
    kao='˗ˏˋ ★ ˎˊ˗',
    blurb='A bullet heaven built across a semester with separate art and sound teams. I wrote UI, enemy movement and player behaviour.',
-   rant='Princess Starshine of the Sparkle Kingdom accidentally takes an elevator to hell, and fights her way out with rainbows, butterflies and unicorns. A bullet heaven, built over a full semester alongside separate art and sound teams. I wrote the UI, the enemy movement and the player behaviour.\n\nThe real lesson was not the code. It was learning to hand a build to an artist, get something back that does not match what you assumed, and keep the thing shipping anyway.',
+   rant='Princess Starshine of the Sparkle Kingdom of Rainbow Butterflies accidentally rides an elevator into hell. The demons are ready for her; they are not ready for rainbows, butterflies, unicorns and sunshine. A bullet heaven, built over a full semester alongside separate art and sound teams.\n\nThis was before I was president — I was programming, and wrote the UI, the enemy movement and the player behaviour. The real lesson was not the code. It was learning to hand a build to an artist, get something back that does not match what you assumed, and keep the thing shipping anyway.',
    links=[('ITCH.IO','https://gadig.itch.io/princess-starshine-vs-the-demons'),
           ('GITHUB','https://github.com/gmuGADIG/Princess-Starshine')]),
 ]
