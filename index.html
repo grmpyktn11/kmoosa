@@ -1,286 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- kmoosa homepage. Two colours: #543920 brown, #feeac7 cream.
+     One screen. Click the cat: it and the name slide right together, and the
+     navigation unfolds into the space on the left. Nothing fades out. -->
+<html lang="en" data-theme="light">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#feeac7" id="tc">
+<title>Khalid Moosa — software engineer</title>
+<meta name="description" content="Khalid Moosa, software engineer in Chantilly, Virginia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#feeac7; --ink:#543920; --scan:rgba(84,57,32,.085); color-scheme:light; }
+  :root[data-theme="dark"]{ --bg:#543920; --ink:#feeac7; --scan:rgba(254,234,199,.06); color-scheme:dark; }
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="This is my webpage!">
-  <meta name="author" content="Khalid Moosa">
-  <link rel="icon" href="img/car.jpg" type="image/x-icon"> 
-  <title>Khalid Moosa</title>
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Pixelify Sans","Silkscreen",monospace;
+    overflow:hidden;
+    transition:background 220ms linear, color 220ms linear;
+  }
 
-  <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/themify-icons.css" rel="stylesheet">
-  <link href='css/dosis-font.css' rel='stylesheet' type='text/css'>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    </head>
-    <body id="page-top" data-spy="scroll" data-target=".side-menu">
-      <nav class="side-menu">
-        <ul>
-          <li class="hidden active">
-            <a class="page-scroll" href="#page-top"></a>
-          </li>
-          <li>
-            <a href="#home" class="page-scroll">
-              <span class="menu-title">Home</span>
-              <span class="dot"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#speakers" class="page-scroll">
-              <span class="menu-title">Projects</span>
-              <span class="dot"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#schedule" class="page-scroll">
-              <span class="menu-title">Skills</span>
-              <span class="dot"></span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="container-fluid">
-        <!-- Start: Header -->
-        <div class="row hero-header" id="home">
-          <div class="col-md-7">
-            <h1></h1>
-            <h1>Khalid Moosa</h1>
-            <h2>Software Developer</h2>
-            <h2>Khalidmoosa749@gmail.com</h2>
+  /* ---------------- scanlines ---------------- */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:9; pointer-events:none;
+    background:repeating-linear-gradient(0deg, var(--scan) 0 1px, transparent 1px 3px);
+  }
+  body::after{
+    content:""; position:fixed; left:0; right:0; height:38vh; top:-38vh;
+    z-index:8; pointer-events:none;
+    background:linear-gradient(180deg, transparent, var(--scan), transparent);
+    animation:sweep 7.5s linear infinite;
+  }
+  @keyframes sweep{ to{ transform:translateY(calc(100vh + 38vh)); } }
 
-            <a href="https://drive.google.com/file/d/1vYG7iGWUDvmb68GahkcYOmrgdR2JS5Nn/view?usp=sharing" class="btn btn-lg btn-pink">
-              Resume 
-            </a>
+  .skip{
+    position:fixed; left:1rem; top:-4rem; z-index:20;
+    background:var(--ink); color:var(--bg); padding:.6rem 1rem;
+    font-family:"Silkscreen",monospace; font-size:.8rem; text-decoration:none;
+    transition:top 140ms linear;
+  }
+  .skip:focus{top:1rem}
 
-          </div>
-          <div class="col-md-5 hidden-xs">
-            <img src="img/car.png" class="rocket animated bounce">
-          </div>
-        </div>
-        <!-- End: Header -->
-      </div>
-      <div class="container-fluid">
-        <!-- Start: Desc -->
-    
-        <!-- Start: Speakers -->
-        <div class="row me-row content-ct speaker" id="speakers">
-          <h1 class="row-title">My Projects</h1>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/writingGuy.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>pptxt</h3>
-            <p>A small tool i made during finals season. I did not want to keep copy pasting powerpoints and also waste tokens for my llm i was using, so this app takes in powerpoints, and converts them into stripped .txts to make it more efficient to feed.</p>
-            <ul class="speaker-social">
-              <li><a href="https://drive.google.com/file/d/1BA-bFxdBDLZ3qx9JYU-pKZo6r2qYASi2/view?usp=drive_link"><span class="ti-game"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/pptxtxt"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/wkw.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>WKW-ify</h3>
-            <p>My final project for computational photography which i presented. This app uses algorithms and classical techniques we learned in class to style and colorgrade photos like two of my favorite Wong Kar Wai movies. </p>
-            <ul class="speaker-social">
-              <li><a href="https://www.canva.com/design/DAG6cko4-zc/8uZMiF73g-ikd7jn0ScUYA/edit?utm_content=DAG6cko4-zc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><span class="ti-layers"></span></a></li>              
-              <li><a href="https://github.com/grmpyktn11/wongkarwaify"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/steamChan.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Steam Search</h3>
-            <p>Final project for our database class. This is an app that makes steam search a bit better, adding in all time lows, current vs base price, and other analytics to make finding data easier</p>
-            <ul class="speaker-social">
-              <li><a href="https://github.com/grmpyktn11/Cs450Project"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/carwork.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Resource monitor</h3>
-            <p>A cute electron app which tells you important pc stats such as your cpu and ram usage.</p>
-            <ul class="speaker-social">
-              <li><a href="https://www.dropbox.com/scl/fi/63h7ncnj30sgscjs0szqz/cool-resource-monitor-Setup-1.0.0.exe?rlkey=22hecuz37iz4aezpsgcbnkemq&st=p85mblu4&dl=0"><span class="ti-game"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/cool-performance-monitor"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-               <div class="col-md-4 col-sm-6 feature">
-            <img src="img/studygirl.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Cheet Sheet</h3>
-            <p>This is a website that lets you enter a presentation from a lecture, then you will get a summary pdf with notes! Front end is created in react hosted on AWS, with 3.5turbo summarizing thats in a Flask server hosted on PYEVERYWHERE.</p>
-            <ul class="speaker-social">
-              <li><a href="https://main.d3fx1tq6ix6hg8.amplifyapp.com/"><span class="ti-game"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/cheetsheetprogram"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/akaliCat.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>FirstPick</h3>
-            <p>This is an app that allows you to register you account and the characters you play, and it recommends you which champs to play in countermatchups based off data from op.GG.
-              There is a database of user info so you can use this whereever you would like! Uses MySQL, CleverCloud Hosting, and scraping from the website. [SERVER TEMPORARILY DOWN]
-            </p>
-            <ul class="speaker-social">
-              <li><a href="http://3.22.68.228:5000/"><span class="ti-game"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/LastPick"><span class="ti-github"></span></a></li>
-  
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/Letter.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Keeping Up With Kpop</h3>
-            <p>This is a twitter bot that scrapes headlines from Soompi.com, generates a tweet from ChatGPT, and posts it on Twitter using the Twitter API.</p>
-            <ul class="speaker-social">
-              <li><a href="https://twitter.com/KeepingUpKpop1"><span class="ti-twitter"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/Keeping-Up-With-Kpop/tree/main"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/fetch.png" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Fetch Quest</h3>
-            <p>Our Fall 2024 GADIG game! Imagine if Link was a dog! We switched to GODOT this semester, and I also took a more admininstrative role this semester.</p>
-            <ul class="speaker-social">
-              <li><a href="https://gadig.itch.io/fetch-quest"><span class="ti-game"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/charlogo.png" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Chalet's Explore</h3>
-            <p>Submission for WICSHacks 2025! This is a social media platform that lets users post and get recommendations to find third places in Cville!</p>
-            <ul class="speaker-social">
-              <li><a href="https://github.com/grmpyktn11/WICS-hacks"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/evilcat.png" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Worse Wiki</h3>
-            <p>Submission for PatriotHacks 2024, we made an evil wikipedia that shows more and more misinformation the longer you read! This project was fun since I got to finally work with friends! I got to learn how to write an API as well as call on it.</p>
-            <ul class="speaker-social">
-              <li><a href="https://docs.google.com/presentation/d/1fdXTB0Ph3W6_z6oEbrQ6YW8hxRZiufJNRNcE3yjll6U/edit?usp=sharing"><span class="ti-layers"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/WorseWiki"><span class="ti-github"></span></a></li>
+  /* ---------------- mode, pinned to the corner ---------------- */
+  .mode{
+    position:fixed; right:1.5rem; bottom:1.5rem; z-index:12;
+    font-family:"Silkscreen",monospace; font-size:.78rem; letter-spacing:.14em;
+    color:var(--ink); background:none; border:1px dashed var(--ink);
+    padding:.55rem .9rem; cursor:pointer;
+    touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  }
+  .mode:hover{background:var(--ink); color:var(--bg)}
 
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/pokeball.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;" >
-            <h3>Professor's Research</h3>
-            <p>This app utilizes OpenCV to take pictures of a card, then uses PyTesseract OCR to process the image and display how many would be left in my deck. </p>
-            <ul class="speaker-social">
-              <li><a href="https://www.youtube.com/watch?v=c5HoqhqTWB0"><span class="ti-youtube"></span></a></li>
-              <li><a href="https://github.com/grmpyktn11/Pokemon-Card-Counter"><span class="ti-github"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/Blathers_NH.png" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Catfe au Lait</h3>
-            <p>A diner dash inspired game that takes place in a cat cafe. Built in unity for my CS325 (game development) final project.</p>
-            <ul class="speaker-social">
-              <li><a href="https://grumpykitten1.itch.io/catfe-au-lait"><span class="ti-game"></span></a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/PrincessIdleSpritesheet.png" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Princess Starshine</h3>
-            <p>This is a bullet heaven game I made in GMU's Game Developement club. We worked with alongside multiple teams such as art and sound design in order to make this over the semester. I contributed to 
-              coding UI, enemy movement, and player behaviors. Its developed in Unity and uses C#. 
-            </p>
-            <ul class="speaker-social">
-              <li><a href="https://github.com/gmuGADIG/Princess-Starshine"><span class="ti-github"></span></a></li>
-              <li><a href="https://gadig.itch.io/"><span class="ti-game"></span></a></li>
-            </ul>
-          </div>
+  .stage{position:relative; height:100%}
 
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/catEating.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>Dish Detective</h3>
-            <p>My first hackathon project. I attended VCU's Megahack in March of 2024. It utilizes Google Cloud Vision as well as chatGPT. The user takes a picture of groceries they may have, then the website generates a recipe that can be shared.</p>
-            <ul class="speaker-social">
-              <li><a href="https://devpost.com/software/dish-detective-jhu81e"><span class="ti-layers"></span></a></li>
-  
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/catManager.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>FocusUp!</h3>
-            <p>This is an app that gives my phone a notification every time I am on Visual Studio and it makes sure I don't get distracted while I code!</p>
-            <ul class="speaker-social">
-              <li><a href="https://github.com/grmpyktn11/FocusUp"><span class="ti-github"></span></a></li>
-            </div>
-          <div class="col-md-4 col-sm-6 feature">
-            <img src="img/cat-coding.jpg" class="speaker-img" style="max-width: 200px; max-height: 200px;">
-            <h3>And many more!</h3>
-            <p>I'm constantly working on new things, and I put all my favorite projects in here! I will update this as I make newer projects that I'd like to show off.</p>
-            <ul class="speaker-social">
-              <li><a href="https://www.instagram.com/justkhalidm/"><span class="ti-instagram"></span></a></li>
-              <li><a href="https://discordapp.com/users/849297404170862602"><span class="ti-comment-alt"></span></a></li>
-              <li><a href="https://www.linkedin.com/in/khalid-moosa-956830299/"><span class="ti-linkedin"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End: Speakers -->
-      </div>
+  /* ---------------- cat + name: one group, so nothing has to disappear ------- */
+  .group{
+    position:absolute; left:50%; top:46%;
+    transform:translate(-50%,-50%);
+    display:flex; flex-direction:column; align-items:center; gap:2.6rem;
+    z-index:3;
+    transition:transform 380ms cubic-bezier(.34,1.28,.5,1);
+  }
+  .stage[data-open="true"] .group{ transform:translate(calc(-50% + 19vw),-50%); }
 
-  
-<div class="container-fluid">
-  <div class="row intro-section">
-    <!-- Logo -->
-    <div class="col-md-4 col-sm-12 gadig-logo text-center">
-      <img src="img/gadig.png" alt="Logo" class="gadig-logo-img">
-    </div>
+  #cat{
+    font-family:"VT323","Cascadia Mono",Consolas,monospace;
+    white-space:pre; font-size:clamp(2.2rem,4.6vw,3.4rem); line-height:1.06;
+    letter-spacing:.02em;
+    color:var(--ink); background:none; border:0; padding:.5rem .7rem; cursor:pointer;
+    -webkit-user-select:none; user-select:none;
+    touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  }
+  #cat .eye{display:inline-block; width:1ch; text-align:center;
+            transition:transform 90ms linear}
 
-    <!-- Text + buttons -->
-    <div class="col-md-8 col-sm-12 gadig-text">
-      <h1>GMU Game Analysis and Design Interest Group</h1>
-      <h3>President</h3>
-      <p>
-        GADIG is honestly something that has shaped my entire college experience. I started during my 
-        freshman year after happening upon some of the officers hanging up posters. We are a club of 80+ members from all majors and backgrounds, and we come together to make a game 
-        every semester. Initially, I started out as just a programmers but quickly was elected president and it's the best decision I've made my whole college career. As president, I've
-        grown our club to almost double the size from my freshman year, gotten us exposed to all sorts of events such as Magfest, District Arcade, and many other local events, and this year,
-        we were chosen to present a panel at MAGFEST 2026! It is as passionate as a passion project could be, and has been an amazing experience for me. Our games are available at the itch link below
-      </p>
+  /* a short digital tear, so the cat reads as a display rather than a drawing */
+  @keyframes glitch{
+    0%,100%{transform:none}
+    22%{transform:translateX(-5px) skewX(-8deg)}
+    34%{transform:translateX(6px) skewX(7deg)}
+    46%{transform:translateX(-2px)}
+    58%{transform:none}
+  }
+  #cat.glitching{animation:glitch 300ms steps(2,end) 1}
 
-      <div class="intro-links">
-        <a href="https://gadig.itch.io/" class="btn btn-sm btn-default">Itch.io</a>
-        <a href="https://orgs.gmu.edu/gadig/?gmuw-rd=sm&gmuw-rdm=ht" class="btn btn-sm btn-default">Club Website</a>
-      </div>
+  .name{text-align:center; white-space:nowrap}
+  .name h1{
+    margin:0; font-weight:600;
+    font-size:clamp(1.9rem,4.2vw,3.2rem); letter-spacing:.28em; text-indent:.28em;
+  }
+  .name .role{
+    display:block; margin-top:1.2em;
+    font-family:"Silkscreen",monospace; font-size:clamp(.68rem,1.15vw,.88rem);
+    letter-spacing:.2em; text-indent:.2em;
+  }
+  .name .hint{
+    display:block; margin-top:1.5em;
+    font-family:"Silkscreen",monospace; font-size:clamp(.62rem,1vw,.76rem);
+    letter-spacing:.2em; text-indent:.2em; opacity:.75;
+  }
+
+  /* ---------------- the navigation ---------------- */
+  .nav{
+    position:absolute; left:calc(50% - 17rem); top:calc(46% - 12.5rem); z-index:2;
+    height:285px; width:280px;
+    overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain;
+    border-left:1px dashed var(--ink); border-top:1px dashed var(--ink);
+    font-family:"Silkscreen",monospace; font-size:40px; line-height:1.34;
+    transform-origin:0 0 0;
+    transform:matrix3d(1.876464,0.669895,0,0.003783,
+                       0.407518,0.001,0,0.002410,
+                       0,0,1,0, 0,-11.6,0,1);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:transform 340ms cubic-bezier(.2,.85,.3,1),
+               opacity 180ms linear, visibility 0s linear 340ms;
+  }
+  .stage[data-open="true"] .nav{
+    transform:matrix3d(1.876464,0.669895,0,0.003783,
+                       0.407518,2.207138,0,0.002410,
+                       0,0,1,0, 0,-11.6,0,1);
+    opacity:1; visibility:visible; pointer-events:auto;
+    transition-delay:260ms, 260ms, 0s;   /* let the cat move first */
+  }
+  .nav ul{list-style:none; margin:0; padding:0}
+  .nav a{
+    display:block; white-space:nowrap; color:var(--ink);
+    padding:1px 5px; text-decoration:none; text-align:right;
+  }
+  .nav a:hover,.nav a:focus-visible{background:var(--ink); color:var(--bg)}
+  .nav{scrollbar-width:thin; scrollbar-color:var(--ink) transparent}
+  .nav::-webkit-scrollbar{width:6px}
+  .nav::-webkit-scrollbar-track{background:transparent}
+  .nav::-webkit-scrollbar-thumb{background:var(--ink)}
+
+  :focus-visible{outline:2px dashed var(--ink); outline-offset:4px}
+
+  /* Reduced motion: drop the perspective and show a plain upright list. The tilt
+     is decorative and it is the one thing here that genuinely hurts legibility. */
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important}
+    .nav,.stage[data-open="true"] .nav{
+      transform:none; width:20rem; height:auto; left:calc(50% - 26rem); top:calc(46% - 8rem);
+      border:1px dashed var(--ink); padding:.7rem 1rem; font-size:1.6rem;
+    }
+    .stage[data-open="true"] .group{transform:translate(calc(-50% + 16vw),-50%)}
+  }
+
+  /* ----------------------------------------------------------------------
+     Phones get an upright list, not the wedge. The perspective wastes a large
+     empty triangle, and it made the furthest item the smallest tap target.
+     The page also becomes a normal scrolling document, so the menu can never
+     be squeezed off a short screen.
+     ---------------------------------------------------------------------- */
+  @media (max-width:900px){
+    body{overflow-y:auto; overflow-x:hidden}
+
+    /* Top-aligned, and the list sits AFTER the cat in the flow. Opening the menu
+       then only adds height below it - the cat never slides out from under the
+       finger that just tapped it. */
+    .stage{
+      position:static; min-height:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+      padding:max(3.5rem,13vh) 1.25rem 6.5rem; gap:2.2rem;
+    }
+    .group{position:static; transform:none; gap:1.8rem; order:1}
+    .nav{order:2}
+    .stage[data-open="true"] .group{transform:none}
+
+    #cat{font-size:clamp(1.9rem,8.4vw,2.6rem); padding:.6rem}
+    .name h1{font-size:clamp(1.5rem,7vw,2.1rem); letter-spacing:.2em; text-indent:.2em}
+    .name .role{font-size:.7rem}
+    .name .hint{font-size:.66rem}
+
+    .nav{
+      position:static; transform:none; visibility:visible; opacity:1;
+      width:min(22rem,100%); height:auto; overflow:visible;
+      border:0; font-family:"Silkscreen",monospace; font-size:1.3rem; line-height:1;
+      display:grid; grid-template-rows:0fr;
+      transition:grid-template-rows 320ms cubic-bezier(.2,.85,.3,1);
+    }
+    .stage[data-open="true"] .nav{
+      transform:none; grid-template-rows:1fr; opacity:1; visibility:visible;
+      transition-delay:0s;
+    }
+    .nav ul{overflow:hidden; min-height:0}
+    .nav a{
+      text-align:center; padding:1.15rem .5rem;   /* ~54px rows, all equal */
+      border-top:1px dashed var(--ink);
+    }
+    .nav li:last-child a{border-bottom:1px dashed var(--ink)}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#cat">Skip to navigation</a>
+<button class="mode" id="mode" type="button" aria-pressed="false"
+        aria-label="Switch to dark mode">MODE</button>
+
+<div class="stage" id="stage" data-open="false">
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <ul>
+      <li><a href="resume.html">RESUME</a></li>
+      <li><a href="projects.html">PROJECTS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="https://github.com/grmpyktn11">GITHUB</a></li>
+      <li><a href="mailto:Khalidmoosa749@gmail.com">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <div class="group" id="group">
+    <button id="cat" aria-expanded="false" aria-controls="nav" aria-label="Open navigation"><span aria-hidden="true"> /\_/\
+( </span><span class="eye" id="eL">&#8226;</span>w<span class="eye" id="eR">&#8226;</span><span> )
+(")_(")
+  c[_]</span></button>
+    <div class="name">
+      <h1>KHALID MOOSA</h1>
+      <span class="role">SOFTWARE ENGINEER &#183; CHANTILLY, VA</span>
+      <span class="hint">CLICK THE CAT</span>
     </div>
   </div>
+
 </div>
- 
-                  
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End: Schedule -->
 
-      <!-- Start: Footer -->
-      <div class="container-fluid footer">
-        <div class="row footer-credit">
-          <div class="col-md-6 col-sm-6">
-            <p>Website designed by Khalid Moosa.</p>
-          </div>
-        </div>
-      </div>
-      <!-- End: Footer -->
+<script>
+/* ---- eyes follow the cursor. One glyph, moved on both axes, so the pupil is
+        the same size whichever way it looks ---- */
+var EYES = [document.getElementById('eL'), document.getElementById('eR')];
+var PUPIL = '•', SHUT = '^';
+var mx = null, my = null, blinking = false;
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="js/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/jquery.easing.min.js"></script>
-      <script src="js/scrolling-nav.js"></script>
-      <script src="js/validator.js"></script>
+var centres = [];
+function measureEyes(){
+  centres = EYES.map(function(el){
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width/2, y: r.top + r.height/2 };
+  });
+}
 
-    </body>
-    </html>
+function setEyes(){
+  EYES.forEach(function(el, i){
+    if(blinking){ el.textContent = SHUT; el.style.transform = ''; return; }
+    var ox = 0, oy = 0;
+    if(mx !== null && centres[i]){
+      var dx = mx - centres[i].x, dy = my - centres[i].y;
+      var len = Math.hypot(dx, dy);
+      if(len > 10){ ox = Math.round(dx/len); oy = Math.round(dy/len); }
+    }
+    el.textContent = PUPIL;
+    el.style.transform = 'translate(' + (ox * 0.15) + 'em,' + (oy * 0.13) + 'em)';
+  });
+}
+addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; setEyes(); },
+                 { passive: true });
+addEventListener('resize', measureEyes, { passive: true });
+
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function blink(){
+  blinking = true; setEyes();
+  setTimeout(function(){ blinking = false; setEyes(); }, 130);
+  setTimeout(blink, 3200 + Math.random()*4200);
+}
+measureEyes(); setEyes();
+if(!reduce) setTimeout(blink, 2600);
+
+var cat = document.getElementById('cat');
+function glitch(){
+  cat.classList.add('glitching');
+  setTimeout(function(){ cat.classList.remove('glitching'); }, 320);
+}
+if(!reduce) setInterval(function(){ if(Math.random() < .5) glitch(); }, 5200);
+
+/* ---- click the cat: the whole group slides right, then the nav unfolds ---- */
+var stage = document.getElementById('stage'), nav = document.getElementById('nav');
+var items = Array.prototype.slice.call(nav.querySelectorAll('a'));
+
+function setOpen(v, moveFocus){
+  stage.dataset.open = String(v);
+  cat.setAttribute('aria-expanded', String(v));
+  if(v) nav.removeAttribute('inert'); else nav.setAttribute('inert','');
+  if(v && moveFocus) setTimeout(function(){ items[0].focus(); }, reduce ? 0 : 320);
+  setTimeout(measureEyes, reduce ? 0 : 420);
+}
+setOpen(false, false);
+
+var coarse = matchMedia('(pointer: coarse)').matches;
+if(coarse) document.querySelector('.name .hint').textContent = 'TAP THE CAT';
+
+cat.addEventListener('click', function(e){
+  e.stopPropagation();
+  if(!reduce) glitch();
+  var opening = stage.dataset.open !== 'true';
+  setOpen(opening, !coarse);          /* don't yank focus on a touch keyboard */
+  if(opening && coarse){
+    setTimeout(function(){
+      nav.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+    }, 340);
+  }
+});
+document.addEventListener('click', function(e){
+  if(stage.dataset.open === 'true' && !nav.contains(e.target)) setOpen(false, false);
+});
+addEventListener('keydown', function(e){
+  if(stage.dataset.open !== 'true') return;
+  if(e.key === 'Escape'){ setOpen(false, false); cat.focus(); return; }
+  var i = items.indexOf(document.activeElement);
+  if(i === -1) return;
+  if(e.key === 'ArrowDown'){ e.preventDefault(); items[(i+1) % items.length].focus(); }
+  else if(e.key === 'ArrowUp'){ e.preventDefault(); items[(i-1+items.length) % items.length].focus(); }
+  else if(e.key === 'Home'){ e.preventDefault(); items[0].focus(); }
+  else if(e.key === 'End'){ e.preventDefault(); items[items.length-1].focus(); }
+});
+
+/* ---- light / dark ---- */
+var root = document.documentElement;
+try{
+  var saved = localStorage.getItem('kmoosa-theme');
+  if(saved) root.dataset.theme = saved;
+  else if(matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
+}catch(e){}
+document.getElementById('mode').addEventListener('click', function(e){
+  e.stopPropagation();
+  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  try{ localStorage.setItem('kmoosa-theme', root.dataset.theme); }catch(err){}
+  syncMode();
+});
+function syncMode(){
+  var dark = root.dataset.theme === 'dark';
+  var btn = document.getElementById('mode');
+  btn.setAttribute('aria-pressed', String(dark));
+  btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  document.getElementById('tc').setAttribute('content', dark ? '#543920' : '#feeac7');
+}
+syncMode();
+</script>
+<script src="contact.js"></script>
+</body>
+</html>
