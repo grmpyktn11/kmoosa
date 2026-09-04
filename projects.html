@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#feeac7" id="tc">
+<title>Projects — Khalid Moosa</title>
+<meta name="description" content="Tools, AI systems, games and hackathon projects by Khalid Moosa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .wrap{max-width:76rem}
+
+  .grid{
+    display:grid; gap:.75rem;
+    grid-template-columns:repeat(auto-fill, minmax(13.5rem,1fr));
+  }
+  .tile{
+    display:flex; flex-direction:column; min-height:11.5rem;
+    border:1px dashed var(--ink); padding:.85rem .85rem .9rem;
+    text-decoration:none; color:var(--ink); background:var(--bg);
+    touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  }
+  a.tile:hover,a.tile:focus-visible{background:var(--ink); color:var(--bg)}
+  a.tile:hover .ico,a.tile:focus-visible .ico{text-shadow:0 0 0 var(--bg)}
+
+  /* Thematic kaomoji, one per project, in a stack with the Unicode coverage
+     they need. transparent fill + a zero-blur shadow flattens the colour emoji
+     inside them to a single ink, so the page stays brown and cream. */
+  .ico{
+    margin:0 0 .55rem; font-size:1.25rem; line-height:1.45;
+    font-family:"Segoe UI Symbol","Segoe UI Emoji","Yu Gothic UI","Nirmala UI",
+                "Segoe UI Historic","Segoe UI",sans-serif;
+    white-space:nowrap; overflow:hidden;
+    color:transparent; text-shadow:0 0 0 var(--ink);
+    -webkit-user-select:none; user-select:none;
+  }
+  .tile h3{
+    margin:0 0 .15rem; font-family:"Pixelify Sans",monospace; font-weight:600;
+    font-size:1.12rem; line-height:1.15;
+  }
+  .tile .yr{
+    font-family:"Silkscreen",monospace; font-size:.58rem; letter-spacing:.1em;
+    opacity:.75; margin-bottom:.5rem;
+  }
+  .tile .stack{
+    font-family:"Silkscreen",monospace; font-size:.55rem; letter-spacing:.07em;
+    line-height:1.7; opacity:.8; margin-bottom:.55rem;
+  }
+  .tile p{
+    margin:0; font-size:.92rem; line-height:1.45; max-width:none;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .tile .go{
+    margin-top:auto; padding-top:.7rem;
+    font-family:"Silkscreen",monospace; font-size:.56rem; letter-spacing:.12em; opacity:.7;
+  }
+
+  @media (max-width:620px){
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:.5rem}
+    .tile{min-height:0; padding:.65rem .65rem .7rem}
+    .ico{font-size:1.05rem; margin-bottom:.4rem}
+    .tile h3{font-size:.95rem}
+    .tile .stack{display:none}
+    .tile p{font-size:.82rem; line-height:1.4}
+    .tile .go{display:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<button class="mode" id="mode" type="button" aria-pressed="false" aria-label="Switch to dark mode">MODE</button>
+
+<div class="wrap">
+
+  <header class="top">
+    <a class="home" href="index.html" aria-label="Home">=^ <span class="eye" aria-hidden="true">&#8226;</span>w<span class="eye" aria-hidden="true">&#8226;</span> ^=</a>
+    <nav aria-label="Main">
+      <a href="resume.html">RESUME</a>
+      <a href="projects.html" aria-current="page">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="https://github.com/grmpyktn11">GITHUB</a>
+      <a href="mailto:Khalidmoosa749@gmail.com">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <h1>PROJECTS</h1>
+    <p class="lede">Mostly small tools that fix one specific annoyance, plus games made with friends. Everything here shipped and got used by someone other than me.</p>
+
+    <div class="grid">
+
+      <a class="tile" href="project-knowledge-assistant.html" style="view-transition-name:card-knowledge-assistant">
+        <div class="ico" aria-hidden="true">⋆.˚🔍 ⊹</div>
+        <h3>Knowledge assistant</h3>
+        <div class="yr">2026 &rarr; NOW &middot; AI &middot; SAP NS2</div>
+        <div class="stack">REACT · FLASK · AWS GOVCLOUD · HYBRID RETRIEVAL</div>
+        <p>Sole engineer. 30+ delivery managers, 1,000+ queries a week, source-tracked citations. Cut lookup time from 15 minutes to under 30 seconds.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-flock-off.html" style="view-transition-name:card-flock-off">
+        <div class="ico" aria-hidden="true">[ ◉¯] ✧˖°</div>
+        <h3>flock-off</h3>
+        <div class="yr">SEP 2026 &middot; TOOL</div>
+        <div class="stack">PYTHON · OPENSTREETMAP · ROUTING</div>
+        <p>Navigation that routes around ALPR and speed cameras, then hands the trip to Google Maps. Names who runs each camera.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-nibbler.html" style="view-transition-name:card-nibbler">
+        <div class="ico" aria-hidden="true">‧₊˚ ⋅ 🍽️ ‧₊˚ ⋅</div>
+        <h3>Nibbler</h3>
+        <div class="yr">2026 &middot; AI</div>
+        <div class="stack">PYTHON · LLM APIS · MCP · POSTGRESQL · VECTOR SEARCH</div>
+        <p>Pulls restaurant mentions out of Instagram, Discord, WhatsApp and SMS, then matches them against a preference profile built from your order history.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-firstpick.html" style="view-transition-name:card-firstpick">
+        <div class="ico" aria-hidden="true">.✦ ݁˖🎮๋࣭₊ ⊹</div>
+        <h3>FirstPick</h3>
+        <div class="yr">AUG 2026 &middot; TOOL</div>
+        <div class="stack">MYSQL · SCRAPING · CLEVERCLOUD</div>
+        <p>Register the champions you play and it recommends picks for counter-matchups, using data scraped from op.gg.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-king-fisher.html" style="view-transition-name:card-king-fisher">
+        <div class="ico" aria-hidden="true">⋆.˚🎣 ₊˚⊹</div>
+        <h3>King Fisher</h3>
+        <div class="yr">GADIG &middot; GAME</div>
+        <div class="stack">GADIG · WINDOWS · LINUX</div>
+        <p>A 2&ndash;4 player party game about catching the most fish, where you reel in your catch by playing along to the rhythm.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-wkw-ify.html" style="view-transition-name:card-wkw-ify">
+        <div class="ico" aria-hidden="true">. ₊ ⊹ . 🎞️.ᐟ</div>
+        <h3>wkw-ify</h3>
+        <div class="yr">FEB 2026 &middot; TOOL</div>
+        <div class="stack">PYTHON · OPENCV · COLOUR SCIENCE</div>
+        <p>Colour-grades photographs like two favourite Wong Kar-wai films, using classical technique rather than a model.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-cheet-sheet.html" style="view-transition-name:card-cheet-sheet">
+        <div class="ico" aria-hidden="true">✎ᝰ. ⋆.˚</div>
+        <h3>Cheet Sheet</h3>
+        <div class="yr">FEB 2026 &middot; TOOL</div>
+        <div class="stack">REACT · AWS AMPLIFY · FLASK · GPT</div>
+        <p>Feed it a lecture presentation and it returns a summary PDF with notes.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-deadshot.html" style="view-transition-name:card-deadshot">
+        <div class="ico" aria-hidden="true">⋆.˚🐴 ₊˚⊹</div>
+        <h3>DEADSHOT</h3>
+        <div class="yr">GADIG &middot; GAME</div>
+        <div class="stack">GADIG · HTML5 · WINDOWS · LINUX</div>
+        <p>A 2.5D shooter about an exiled gunslinger who comes home to a cursed town overrun by monsters.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-pptxt.html" style="view-transition-name:card-pptxt">
+        <div class="ico" aria-hidden="true">⋆.˚🗒️ ₊˚</div>
+        <h3>pptxt</h3>
+        <div class="yr">DEC 2025 &middot; TOOL</div>
+        <div class="stack">PYTHON</div>
+        <p>Converts PowerPoints into stripped plain text, so they are cheaper and cleaner to feed to a model than pasting slides one by one.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-steam-search.html" style="view-transition-name:card-steam-search">
+        <div class="ico" aria-hidden="true">⋆.˚📈 ₊˚⊹</div>
+        <h3>Steam Search</h3>
+        <div class="yr">DEC 2025 &middot; TOOL</div>
+        <div class="stack">MYSQL · PYTHON · SCRAPING</div>
+        <p>All-time lows, current versus base price, and the analytics needed to tell whether a Steam sale is actually a sale.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-catfe-au-lait.html" style="view-transition-name:card-catfe-au-lait">
+        <div class="ico" aria-hidden="true">⋆.˚☕︎</div>
+        <h3>Catfe au Lait</h3>
+        <div class="yr">JUN 2025 &middot; GAME</div>
+        <div class="stack">UNITY · C#</div>
+        <p>Diner Dash in a cat cafe. Final project for game development.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-kpop-bot.html" style="view-transition-name:card-kpop-bot">
+        <div class="ico" aria-hidden="true">₊˚.🎧 ✩｡</div>
+        <h3>Keeping Up With Kpop</h3>
+        <div class="yr">2025 &middot; BOT</div>
+        <div class="stack">PYTHON · TWITTER API · GPT</div>
+        <p>Scrapes headlines from Soompi, writes the post, and publishes it.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-resource-monitor.html" style="view-transition-name:card-resource-monitor">
+        <div class="ico" aria-hidden="true">๋࣭ ⭑💻 ⊹</div>
+        <h3>Resource Monitor</h3>
+        <div class="yr">MAY 2025 &middot; TOOL</div>
+        <div class="stack">ELECTRON · NODE</div>
+        <p>A small desktop widget for CPU and RAM. Deliberately cute.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-bake-me-crazy.html" style="view-transition-name:card-bake-me-crazy">
+        <div class="ico" aria-hidden="true">˚₊ʚ🧁ɞ₊˚</div>
+        <h3>Bake Me Crazy</h3>
+        <div class="yr">GADIG &middot; GAME</div>
+        <div class="stack">GADIG · HTML5 · WINDOWS</div>
+        <p>You are a baker at a new farmer&rsquo;s market, and flirting is not your strong suit &mdash; so you bake at people instead.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-chalets-explore.html" style="view-transition-name:card-chalets-explore">
+        <div class="ico" aria-hidden="true">ᯓ ✈︎</div>
+        <h3>Chalet&rsquo;s Explore</h3>
+        <div class="yr">FEB 2025 &middot; HACK</div>
+        <div class="stack">WICSHACKS 2025 · WEB · SOCIAL</div>
+        <p>A platform for posting and finding third places around Charlottesville.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-fetch-quest.html" style="view-transition-name:card-fetch-quest">
+        <div class="ico" aria-hidden="true">૮ ˶• ﻌ •˶ ა</div>
+        <h3>Fetch Quest</h3>
+        <div class="yr">FALL 2024 &middot; GAME</div>
+        <div class="stack">GADIG · GODOT · GDSCRIPT</div>
+        <p>Imagine if Link were a dog. The semester we moved the club from Unity to Godot.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-focusup.html" style="view-transition-name:card-focusup">
+        <div class="ico" aria-hidden="true">⋆˙⟡ ꒰ 🔔 ꒱ ⟡˙⋆</div>
+        <h3>FocusUp!</h3>
+        <div class="yr">NOV 2024 &middot; TOOL</div>
+        <div class="stack">VS EXTENSION</div>
+        <p>Pings my phone whenever I wander off while Visual Studio is open.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-worse-wiki.html" style="view-transition-name:card-worse-wiki">
+        <div class="ico" aria-hidden="true">📖⋆. 𐙚 ˚</div>
+        <h3>Worse Wiki</h3>
+        <div class="yr">OCT 2024 &middot; HACK</div>
+        <div class="stack">PATRIOTHACKS 2024 · API DESIGN · WEB</div>
+        <p>An evil Wikipedia that gets less accurate the longer you read. First time I wrote an API and consumed it in the same weekend.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-card-counter.html" style="view-transition-name:card-card-counter">
+        <div class="ico" aria-hidden="true">⋆⁺₊⋆🂲🃍🂶⋆⁺₊⋆</div>
+        <h3>Card Counter</h3>
+        <div class="yr">JUN 2024 &middot; TOOL</div>
+        <div class="stack">OPENCV · PYTESSERACT</div>
+        <p>Photograph a card, OCR it, and see how many are left in the deck. Built for a professor&rsquo;s research.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-fruit-punch.html" style="view-transition-name:card-fruit-punch">
+        <div class="ico" aria-hidden="true">⋆.˚🍉 ₊˚⊹</div>
+        <h3>Fruit Punch</h3>
+        <div class="yr">GADIG &middot; GAME</div>
+        <div class="stack">GADIG · HTML5 · WINDOWS · MACOS · LINUX</div>
+        <p>A beat-em-up in an overgrown urban wasteland. Four playable fruit, three stages, one question: who packs the biggest punch?</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-dish-detective.html" style="view-transition-name:card-dish-detective">
+        <div class="ico" aria-hidden="true">𓌉◯𓇋</div>
+        <h3>Dish Detective</h3>
+        <div class="yr">MAR 2024 &middot; HACK</div>
+        <div class="stack">VCU MEGAHACK 2024 · GOOGLE CLOUD VISION · GPT</div>
+        <p>Photograph the groceries you already have and it generates a recipe you can share. My first hackathon.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+      <a class="tile" href="project-princess-starshine.html" style="view-transition-name:card-princess-starshine">
+        <div class="ico" aria-hidden="true">˗ˏˋ ★ ˎˊ˗</div>
+        <h3>Princess Starshine</h3>
+        <div class="yr">GADIG &middot; GAME</div>
+        <div class="stack">GADIG · UNITY · C#</div>
+        <p>A bullet heaven built across a semester with separate art and sound teams. I wrote UI, enemy movement and player behaviour.</p>
+        <div class="go">OPEN &rarr;</div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <a href="index.html">HOME</a> &middot;
+    <a href="https://github.com/grmpyktn11">MORE ON GITHUB</a> &middot;
+    <a href="mailto:Khalidmoosa749@gmail.com">KHALIDMOOSA749@GMAIL.COM</a>
+  </footer>
+
+</div>
+
+<script src="site.js"></script>
+<script src="transition.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

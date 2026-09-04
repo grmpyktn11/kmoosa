@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#feeac7" id="tc">
+<title>Card Counter — Khalid Moosa</title>
+<meta name="description" content="Photograph a card, OCR it, and see how many are left in the deck. Built for a professor&#x27;s research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<button class="mode" id="mode" type="button" aria-pressed="false" aria-label="Switch to dark mode">MODE</button>
+
+<div class="wrap">
+
+  <header class="top">
+    <a class="home" href="index.html" aria-label="Home">=^ <span class="eye" aria-hidden="true">&#8226;</span>w<span class="eye" aria-hidden="true">&#8226;</span> ^=</a>
+    <nav aria-label="Main">
+      <a href="resume.html">RESUME</a>
+      <a href="projects.html" aria-current="page">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="https://github.com/grmpyktn11">GITHUB</a>
+      <a href="mailto:Khalidmoosa749@gmail.com">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <a class="back" href="projects.html">&larr; ALL PROJECTS</a>
+
+    <div class="hero" style="view-transition-name:card-card-counter">
+      <div class="ico-big" aria-hidden="true">⋆⁺₊⋆🂲🃍🂶⋆⁺₊⋆</div>
+      <h1>Card Counter</h1>
+      <div class="meta">JUN 2024 &middot; TOOL</div>
+      <div class="stack">OPENCV · PYTESSERACT</div>
+    </div>
+
+    <!-- Drop a video in here when you have one:
+         <video src="video/card-counter.mp4" poster="video/card-counter.jpg"
+                controls muted loop playsinline preload="metadata"></video>
+         then delete the .no-video block. -->
+    <div class="frame">
+      <div class="no-video">VIDEO NOT AVAILABLE :c</div>
+    </div>
+
+    <section class="rant">
+      <h2>NOTES</h2>
+      <p>Built for a professor&rsquo;s research. Take a picture of a card, OpenCV finds and cleans it up, PyTesseract reads it, and the app tells you how many of that card are left in the deck.</p>
+      <p>My first real lesson in how much of computer vision is preprocessing rather than the clever bit at the end.</p>
+    </section>
+
+    <div class="btns">
+        <a class="btn" href="https://github.com/grmpyktn11/Pokemon-Card-Counter">GITHUB &rarr;</a>
+    </div>
+
+    <nav class="pager" aria-label="Other projects">
+      <a href="project-worse-wiki.html"><span>&larr; PREV</span>Worse Wiki</a>
+      <a href="project-fruit-punch.html" class="next"><span>NEXT &rarr;</span>Fruit Punch</a>
+    </nav>
+
+  </main>
+
+  <footer class="foot">
+    <a href="projects.html">ALL PROJECTS</a> &middot;
+    <a href="index.html">HOME</a> &middot;
+    <a href="mailto:Khalidmoosa749@gmail.com">KHALIDMOOSA749@GMAIL.COM</a>
+  </footer>
+
+</div>
+
+<script src="site.js"></script>
+<script src="transition.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

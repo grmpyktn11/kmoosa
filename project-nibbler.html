@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#feeac7" id="tc">
+<title>Nibbler — Khalid Moosa</title>
+<meta name="description" content="Pulls restaurant mentions out of Instagram, Discord, WhatsApp and SMS, then matches them against a preference profile built from your order history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<button class="mode" id="mode" type="button" aria-pressed="false" aria-label="Switch to dark mode">MODE</button>
+
+<div class="wrap">
+
+  <header class="top">
+    <a class="home" href="index.html" aria-label="Home">=^ <span class="eye" aria-hidden="true">&#8226;</span>w<span class="eye" aria-hidden="true">&#8226;</span> ^=</a>
+    <nav aria-label="Main">
+      <a href="resume.html">RESUME</a>
+      <a href="projects.html" aria-current="page">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="https://github.com/grmpyktn11">GITHUB</a>
+      <a href="mailto:Khalidmoosa749@gmail.com">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <a class="back" href="projects.html">&larr; ALL PROJECTS</a>
+
+    <div class="hero" style="view-transition-name:card-nibbler">
+      <div class="ico-big" aria-hidden="true">‧₊˚ ⋅ 🍽️ ‧₊˚ ⋅</div>
+      <h1>Nibbler</h1>
+      <div class="meta">2026 &middot; AI</div>
+      <div class="stack">PYTHON · LLM APIS · MCP · POSTGRESQL · VECTOR SEARCH</div>
+    </div>
+
+    <!-- Drop a video in here when you have one:
+         <video src="video/nibbler.mp4" poster="video/nibbler.jpg"
+                controls muted loop playsinline preload="metadata"></video>
+         then delete the .no-video block. -->
+    <div class="frame">
+      <div class="no-video">VIDEO NOT AVAILABLE :c</div>
+    </div>
+
+    <section class="rant">
+      <h2>NOTES</h2>
+      <p>Everyone I know has the same problem: a friend sends you a restaurant, you say "oh that looks good", and then it disappears into a group chat forever. Nibbler goes and finds those mentions across Instagram, Discord, WhatsApp and SMS, parses them with an LLM, and keeps them somewhere you will actually look.</p>
+      <p>The interesting half is the matching. It builds a preference profile out of your order history and spending patterns in Postgres with vector search, then uses MCP connectors and a calendar API to pull in real restaurant data and factor in when you are actually free. You get menu suggestions and a cost estimate per visit rather than a list of names.</p>
+      <p>There is also a sponsored-placement layer where restaurants can bid on recommendation visibility, which is the part that could pay for itself.</p>
+    </section>
+
+    <div class="btns">
+        <a class="btn" href="https://github.com/grmpyktn11">GITHUB &rarr;</a>
+    </div>
+
+    <nav class="pager" aria-label="Other projects">
+      <a href="project-flock-off.html"><span>&larr; PREV</span>flock-off</a>
+      <a href="project-firstpick.html" class="next"><span>NEXT &rarr;</span>FirstPick</a>
+    </nav>
+
+  </main>
+
+  <footer class="foot">
+    <a href="projects.html">ALL PROJECTS</a> &middot;
+    <a href="index.html">HOME</a> &middot;
+    <a href="mailto:Khalidmoosa749@gmail.com">KHALIDMOOSA749@GMAIL.COM</a>
+  </footer>
+
+</div>
+
+<script src="site.js"></script>
+<script src="transition.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

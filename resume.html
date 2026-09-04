@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#feeac7" id="tc">
+<title>Resume — Khalid Moosa</title>
+<meta name="description" content="Resume of Khalid Moosa, software engineer. AI engineer intern at SAP NS2, B.S. Computer Science, George Mason University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .pdf{
+    display:inline-block; margin:0 0 2.4rem;
+    font-family:"Silkscreen",monospace; font-size:.78rem; letter-spacing:.12em;
+    border:1px dashed var(--ink); padding:.7rem 1.1rem; text-decoration:none;
+  }
+  .pdf:hover{background:var(--ink); color:var(--bg)}
+
+  /* print: drop the furniture, keep the words */
+  @media print{
+    :root{--bg:#fff; --ink:#000}
+    body::before{display:none}
+    .mode,.skip,.top nav,.foot,.pdf{display:none}
+    .wrap{max-width:none; padding:0}
+    .top{border-bottom:1px solid #000; margin-bottom:1.5rem}
+    .entry{break-inside:avoid; border-bottom:1px solid #ccc}
+    h2{break-after:avoid; border-bottom:1px solid #000}
+    a{text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<button class="mode" id="mode" type="button" aria-pressed="false" aria-label="Switch to dark mode">MODE</button>
+
+<div class="wrap">
+
+  <header class="top">
+    <a class="home" href="index.html" aria-label="Home">=^ <span class="eye" aria-hidden="true">&#8226;</span>w<span class="eye" aria-hidden="true">&#8226;</span> ^=</a>
+    <nav aria-label="Main">
+      <a href="resume.html" aria-current="page">RESUME</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="https://github.com/grmpyktn11">GITHUB</a>
+      <a href="mailto:Khalidmoosa749@gmail.com">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <h1>RESUME</h1>
+    <p class="lede">Khalid Moosa &mdash; software engineer, Chantilly VA.<br>
+      <a href="mailto:Khalidmoosa749@gmail.com">Khalidmoosa749@gmail.com</a></p>
+
+    <a class="pdf" href="https://drive.google.com/file/d/1BA-bFxdBDLZ3qx9JYU-pKZo6r2qYASi2/view">DOWNLOAD PDF &darr;</a>
+
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="hd">
+        <h3>AI Engineer Intern &middot; SAP NS2</h3>
+        <span class="when">JUN 2026 &rarr; PRESENT &middot; HERNDON, VA</span>
+      </div>
+      <ul>
+        <li>Sole engineer on an internal AI knowledge assistant serving 30+ customer delivery managers and 1,000+ weekly queries; shipped full-stack in React, Flask and AWS GovCloud with source-tracked citations, now live in customer delivery workflows</li>
+        <li>Reduced information lookup from roughly 15 minutes to under 30 seconds across 1,000+ enterprise documents via hybrid keyword routing and structured retrieval grouping</li>
+        <li>Won the company-wide hackathon as an intern, beating full-time engineer teams, with an AI meeting assistant built on internal connectors</li>
+        <li>Automated an executive reporting pipeline across ServiceNow, SharePoint and internal systems, saving about 10 hours a month</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="hd">
+        <h3>Software Engineer &middot; CoAspire</h3>
+        <span class="when">MAR &ndash; MAY 2026 &middot; FAIRFAX, VA</span>
+      </div>
+      <ul>
+        <li>Built a React and TypeScript telemetry dashboard for missile and flight system testing, delivering real-time mission data across 50+ telemetry channels for GNC, embedded and test engineering teams</li>
+        <li>Engineered a custom Node module to process distributed telemetry streams, cutting display latency to near-instant during live integration and validation testing</li>
+        <li>Designed monitoring workflows used by test engineers to validate flight software behaviour across development cycles</li>
+        <li>Contributed C development to operational flight software in a mission systems environment</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="hd">
+        <h3>Contract Software Developer &middot; Warhammer Community Platform</h3>
+        <span class="when">DEC 2025 &ndash; MAR 2026 &middot; REMOTE</span>
+      </div>
+      <ul>
+        <li>Built a production full-stack platform supporting 100+ active users for campaign management and match reporting</li>
+        <li>Designed a REST API in Next.js and PostgreSQL with authentication, rate limiting and analytics infrastructure</li>
+        <li>Improved database query performance by roughly 60% through indexing and schema optimisation</li>
+        <li>Implemented React dashboards for rankings, statistics and administrative controls, deployed on Vercel</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="hd">
+        <h3>President &amp; Game Programmer &middot; GMU GADIG</h3>
+        <span class="when">SEP 2023 &ndash; 2026 &middot; FAIRFAX, VA</span>
+      </div>
+      <ul>
+        <li>Invited to speak at MAGFEST, an industry event with 30,000+ attendees</li>
+        <li>Programmed games in Unity (C#) and Godot (GDScript), focusing on UI, player movement and QA</li>
+        <li>Built Python automation tools on the Google Drive API to streamline submissions and asset management, reducing admin workload by about 80%</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="hd">
+        <h3>B.S. Computer Science &middot; George Mason University</h3>
+        <span class="when">MAY 2026 &middot; FAIRFAX, VA</span>
+      </div>
+      <ul>
+        <li>Dean&rsquo;s Award recipient</li>
+        <li>Deloitte StartUp! Competition winner &mdash; first place out of 40 selected candidates</li>
+        <li>Selected for the steering committee responsible for planning and executing a convention serving 1,000+ attendees</li>
+      </ul>
+    </div>
+
+    <h2>Skills</h2>
+    <table class="spec">
+      <tr><th scope="row">Languages</th><td>Python, Java, C++, JavaScript, TypeScript, SQL</td></tr>
+      <tr><th scope="row">Cloud &amp; systems</th><td>AWS (Lambda, EC2, S3, RDS), REST APIs, CI/CD, Git</td></tr>
+      <tr><th scope="row">Frameworks</th><td>React, Next.js, Flask, Node.js, Electron, three.js</td></tr>
+      <tr><th scope="row">AI / ML</th><td>RAG systems, LLM APIs, vector search, prompt engineering, agentic coding, tool and connector integration</td></tr>
+    </table>
+
+    <h2>Selected project</h2>
+    <div class="entry">
+      <div class="hd">
+        <h3>Nibbler</h3>
+        <span class="when">PYTHON &middot; LLM APIS &middot; MCP &middot; POSTGRESQL</span>
+      </div>
+      <ul>
+        <li>Built a pipeline that ingests restaurant mentions from Instagram, Discord, WhatsApp and SMS using LLM parsing, then matches them against a user preference profile built from order history and spending patterns</li>
+        <li>Integrated MCP connectors and a calendar API to pull external restaurant data and factor in scheduling, returning menu suggestions and cost estimates per visit</li>
+        <li>Designed a sponsored-placement layer for restaurants to bid on recommendation visibility as a monetisation path</li>
+      </ul>
+      <p class="small"><a href="projects.html">More projects &rarr;</a></p>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <a href="index.html">HOME</a> &middot;
+    <a href="projects.html">PROJECTS</a> &middot;
+    <a href="about.html">ABOUT</a>
+  </footer>
+
+</div>
+
+<script src="site.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>
