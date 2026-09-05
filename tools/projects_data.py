@@ -15,13 +15,6 @@ PROJECTS = [
 
  # ---------------- 2026 ----------------
 
- dict(slug='knowledge-assistant', title='Knowledge assistant', year='2026 &rarr; NOW', kind='AI &middot; SAP NS2',
-   stack='REACT · FLASK · AWS GOVCLOUD · HYBRID RETRIEVAL',
-   kao='⋆.˚🔍 ⊹',
-   blurb='Sole engineer. 30+ delivery managers, 1,000+ queries a week, source-tracked citations. Cut lookup time from 15 minutes to under 30 seconds.',
-   rant='This is the thing I am proudest of. I was the only engineer on it, and it is live inside real customer delivery workflows rather than sitting in a demo somewhere.\n\nThe problem was that finding one fact across a thousand-plus enterprise documents took about fifteen minutes. Pure vector search was not good enough on its own, so it runs hybrid keyword routing with structured retrieval grouping, and every answer carries source-tracked citations so people can check it. Lookup is now under thirty seconds.\n\nReact on the front, Flask behind it, deployed on AWS GovCloud. It serves 30+ customer delivery managers and over a thousand queries a week.',
-   links=[]),
-
  dict(slug='flock-off', title='flock-off', year='SEP 2026', kind='TOOL',
    stack='PYTHON · OPENSTREETMAP · ROUTING',
    kao='[ ◉¯] ✧˖°',
