@@ -4,7 +4,7 @@
 All the content lives in projects_data.py - edit that, re-run this, and both the
 gallery and every detail page regenerate together.
 """
-import io, os, sys, html
+import io, os, sys, html, struct
 sys.stdout.reconfigure(encoding='utf-8')
 
 # repo root, whichever directory this is run from
@@ -13,6 +13,42 @@ sys.path.insert(0, HERE)
 OUT = os.path.dirname(HERE)
 
 from projects_data import PROJECTS
+
+# A still stands in until a demo video exists. Drop img/shots/<slug>.<ext> in and
+# it is picked up here - same slug the video will use, so swapping one for the
+# other later is a one-line change in media().
+SHOT_EXTS = ('png', 'gif', 'jpg')
+
+
+def media(slug, title):
+    """The frame contents for a project: its still if we have one, else the
+    placeholder. Portrait shots are contained rather than cropped - the frame is
+    16:9 and a phone screenshot would lose most of itself to a cover crop."""
+    for ext in SHOT_EXTS:
+        rel = 'img/shots/%s.%s' % (slug, ext)
+        if not os.path.exists(os.path.join(OUT, rel)):
+            continue
+        cls = ' class="tall"' if is_portrait(os.path.join(OUT, rel)) else ''
+        return ('<img src="%s" alt="A screenshot of %s" loading="lazy" decoding="async"%s>'
+                % (rel, html.escape(title, quote=True), cls))
+    return '<div class="no-video">VIDEO NOT AVAILABLE :c</div>'
+
+
+def is_portrait(path):
+    """Taller than wide. Read from the file header - no pillow dependency, and
+    these are the only three formats in img/shots."""
+    try:
+        with io.open(path, 'rb') as f:
+            head = f.read(32)
+        if head[1:4] == b'PNG':
+            w, h = struct.unpack('>II', head[16:24])
+        elif head[:3] == b'GIF':
+            w, h = struct.unpack('<HH', head[6:10])
+        else:
+            return False          # jpeg: assume landscape, none are portrait today
+        return h > w
+    except Exception:
+        return False
 
 HEAD = '''<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -79,12 +115,12 @@ def detail(i, p):
       <div class="stack">{stack}</div>
     </div>
 
-    <!-- Drop a video in here when you have one:
-         <video src="video/{slug}.mp4" poster="video/{slug}.jpg"
-                controls muted loop playsinline preload="metadata"></video>
-         then delete the .no-video block. -->
+    <!-- A still until the demo video is cut. To swap in the video, replace the
+         <img> with:
+         <video src="video/{slug}.mp4" poster="img/shots/{slug}.png"
+                controls muted loop playsinline preload="metadata"></video> -->
     <div class="frame">
-      <div class="no-video">VIDEO NOT AVAILABLE :c</div>
+      {media}
     </div>
 
     <section class="rant">
@@ -108,7 +144,7 @@ def detail(i, p):
     <a href="index.html">HOME</a> &middot;
     <a href="mailto:Khalidmoosa749@gmail.com">KHALIDMOOSA749@GMAIL.COM</a>
   </footer>
-'''.format(slug=p['slug'], kao=p['kao'], title=p['title'], year=p['year'],
+'''.format(slug=p['slug'], media=media(p['slug'], p['title']), kao=p['kao'], title=p['title'], year=p['year'],
            kind=p['kind'], stack=p['stack'], rant=rant, links=links,
            pslug=prev['slug'], ptitle=prev['title'],
            nslug=nxt['slug'], ntitle=nxt['title']) + FOOT
