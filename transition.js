@@ -16,6 +16,46 @@
     }
   } catch (e) {}
 
+  /* ---------- coming back: undo the leaving state ----------
+     Back-navigation usually restores this page from the bfcache rather than
+     re-running it, so the gallery comes back exactly as it left: body locked,
+     every tile swept off-screen, the chosen tile still frozen at the end of a
+     fill:forwards animation that covers the screen, and the paw still in the
+     DOM. Nothing above re-runs to clear that, so the page looks broken. */
+  function reset() {
+    document.documentElement.classList.remove('growing');
+    document.body.classList.remove('is-leaving');
+
+    [].slice.call(document.querySelectorAll('.paw'))
+      .forEach(function (el) { el.remove(); });
+
+    [].slice.call(document.querySelectorAll('.tile.chosen')).forEach(function (t) {
+      cancelAnimations(t);
+      [].slice.call(t.children).forEach(cancelAnimations);
+      t.classList.remove('chosen');
+      t.style.transformOrigin = '';
+    });
+
+    [].slice.call(document.querySelectorAll('.tile.swept, .swept-soft'))
+      .forEach(function (el) {
+        el.classList.remove('swept', 'swept-soft');
+        el.style.transitionDelay = '';
+        el.style.removeProperty('--tx');
+        el.style.removeProperty('--ty');
+        el.style.removeProperty('--rot');
+      });
+  }
+
+  function cancelAnimations(el) {
+    if (!el.getAnimations) return;
+    el.getAnimations().forEach(function (a) { a.cancel(); });
+  }
+
+  /* Only on a restore: a fresh load has none of this state, and on a project
+     page the arriving block above has just added .growing, which pageshow
+     would otherwise strip before the grow-in animation had run. */
+  addEventListener('pageshow', function (e) { if (e.persisted) reset(); });
+
   var grid = document.querySelector('.grid');
   if (!grid || reduce) return;
 
