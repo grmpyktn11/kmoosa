@@ -20,20 +20,14 @@ PROJECTS = [
    kao='[ ◉¯] ✧˖°',
    blurb='Navigation that routes around ALPR and speed cameras, then hands the trip to Google Maps. Names who runs each camera.',
    rant='Automatic licence plate readers are everywhere now and almost nobody knows where they are or who operates them. This maps the surveillance grid from public OpenStreetMap data, routes you around it, and then hands the finished trip off to Google Maps so you can actually drive it.\n\nIt also names who runs each camera, because "there is a camera here" is much less useful than "there is a camera here and this is the company collecting it".',
-   links=[('GITHUB','https://github.com/grmpyktn11/flock-off')]),
-
- dict(slug='nibbler', title='Nibbler', year='2026', kind='AI',
-   stack='PYTHON · LLM APIS · MCP · POSTGRESQL · VECTOR SEARCH',
-   kao='‧₊˚ ⋅ 🍽️ ‧₊˚ ⋅',
-   blurb='Pulls restaurant mentions out of Instagram, Discord, WhatsApp and SMS, then matches them against a preference profile built from your order history.',
-   rant='Everyone I know has the same problem: a friend sends you a restaurant, you say "oh that looks good", and then it disappears into a group chat forever. Nibbler goes and finds those mentions across Instagram, Discord, WhatsApp and SMS, parses them with an LLM, and keeps them somewhere you will actually look.\n\nThe interesting half is the matching. It builds a preference profile out of your order history and spending patterns in Postgres with vector search, then uses MCP connectors and a calendar API to pull in real restaurant data and factor in when you are actually free. You get menu suggestions and a cost estimate per visit rather than a list of names.\n\nThere is also a sponsored-placement layer where restaurants can bid on recommendation visibility, which is the part that could pay for itself.',
-   links=[('GITHUB','https://github.com/grmpyktn11')]),
+   links=[('WEBSITE','https://grmpyktn11.github.io/flock-off/'),
+          ('GITHUB','https://github.com/grmpyktn11/flock-off')]),
 
  dict(slug='firstpick', title='FirstPick', year='AUG 2026', kind='TOOL',
-   stack='MYSQL · SCRAPING · CLEVERCLOUD',
+   stack='REACT · FLASK · SQLITE · SCRAPING · CLAUDE',
    kao='.✦ ݁˖🎮๋࣭₊ ⊹',
    blurb='Register the champions you play and it recommends picks for counter-matchups, using data scraped from op.gg.',
-   rant='You register an account, tell it which champions you actually play, and it tells you what to pick into a given matchup based on scraped op.gg data rather than vibes.\n\nUser info lives in MySQL on CleverCloud hosting, so it follows you between machines instead of being stuck in one browser.',
+   rant='You register an account, tell it which champions you actually play, and it tells you what to pick into a given matchup based on scraped op.gg data rather than vibes.\n\nWhen one of your champions counters the enemy pick it gets surfaced above the table, and Claude writes a short game plan for that matchup — grounded in the real scraped win rates rather than in general advice.\n\nEvery outbound call is cached: op.gg for six hours, Riot&rsquo;s champion data for a day, and the game plans permanently per matchup, so the same champion select costs nothing the second time.',
    links=[('GITHUB','https://github.com/grmpyktn11/LastPick')]),
 
  # GADIG - inferred Spring 2026, newest title on the itch page
@@ -52,10 +46,10 @@ PROJECTS = [
    links=[('GITHUB','https://github.com/grmpyktn11/wongkarwaify')]),
 
  dict(slug='cheet-sheet', title='Cheet Sheet', year='FEB 2026', kind='TOOL',
-   stack='REACT · AWS AMPLIFY · FLASK · GPT',
+   stack='REACT · AWS AMPLIFY · FLASK · CLAUDE',
    kao='✎ᝰ. ⋆.˚',
    blurb='Feed it a lecture presentation and it returns a summary PDF with notes.',
-   rant='Drop in a lecture presentation, get back a summary PDF with notes you can actually revise from.\n\nReact front end hosted on AWS Amplify, with a Flask server doing the summarising. It was the first time I had to think about where each half of an app lives and how they talk to each other, rather than everything running on my laptop.',
+   rant='Drop in a lecture presentation, get back a summary PDF with notes you can actually revise from.\n\nReact front end hosted on AWS Amplify, with a Flask server doing the summarising. It was the first time I had to think about where each half of an app lives and how they talk to each other, rather than everything running on my laptop.\n\nThere is a pomodoro on the page too, because the summary takes a minute to come back and you may as well start the twenty-five while you wait.',
    links=[('GITHUB','https://github.com/grmpyktn11/cheetsheetprogram')]),
 
  # ---------------- 2025 ----------------
@@ -145,8 +139,8 @@ PROJECTS = [
  dict(slug='card-counter', title='Card Counter', year='JUN 2024', kind='TOOL',
    stack='OPENCV · PYTESSERACT',
    kao='⋆⁺₊⋆🂲🃍🂶⋆⁺₊⋆',
-   blurb='Photograph a card, OCR it, and see how many are left in the deck. Built for a professor&rsquo;s research.',
-   rant='Built for a professor&rsquo;s research. Take a picture of a card, OpenCV finds and cleans it up, PyTesseract reads it, and the app tells you how many of that card are left in the deck.\n\nMy first real lesson in how much of computer vision is preprocessing rather than the clever bit at the end.',
+   blurb='Photograph a Pok&eacute;mon card, OCR the name, and see how many of it are left in the deck.',
+   rant='Take a picture of a Pok&eacute;mon card, OpenCV finds and cleans it up, PyTesseract reads the name, and the app tells you how many of that card are left in the deck.\n\nMy first real lesson in how much of computer vision is preprocessing rather than the clever bit at the end.',
    links=[('GITHUB','https://github.com/grmpyktn11/Pokemon-Card-Counter')]),
 
  # GADIG - inferred Spring 2024
