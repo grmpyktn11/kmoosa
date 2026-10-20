@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Belt and braces under `* text=auto`: git's binary sniffing already spares
+# these, but an mp4 that ever got LF-normalised would be silently corrupt.
+*.mp4 binary
+*.jpg binary
+*.png binary
+*.gif binary

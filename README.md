@@ -41,15 +41,21 @@ tile, longer notes for the detail page, and a list of `(label, url)` links.
 
 ## Adding a video to a project page
 
-Every detail page has the markup commented out already:
+Drop two files in `video/` named after the project slug and re-run the
+generator:
 
-```html
-<video src="video/<slug>.mp4" poster="video/<slug>.jpg"
-       controls muted loop playsinline preload="metadata"></video>
+```
+video/<slug>.mp4      the demo
+video/<slug>.jpg      its poster, a frame of the video
 ```
 
-Uncomment it, drop the file in `video/`, and delete the `.no-video` block above
-it. Do it in `tools/gen_site.py` if you want it on every page.
+`media()` in `tools/gen_site.py` picks the video if it is there, falls back to
+`img/shots/<slug>.<ext>`, and falls back again to a placeholder. Orientation is
+read from the poster, so a portrait recording is contained in the 16:9 frame
+rather than cropped to nothing.
+
+The demos are recorded by driving each app in a real browser rather than
+captured by hand, so they can be re-cut when an app changes.
 
 ## Notes
 
