@@ -46,6 +46,14 @@
     if (!reduce) setTimeout(blink, 2600);
   }
 
+  /* ---------------- demo videos ---------------- */
+  /* They autoplay muted; under reduced motion they wait for a click instead. */
+  if (reduce) {
+    [].forEach.call(document.querySelectorAll('.frame video[autoplay]'), function (v) {
+      v.removeAttribute('autoplay'); v.pause();
+    });
+  }
+
   /* ---------------- light / dark ---------------- */
   var root = document.documentElement;
   try {

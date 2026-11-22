@@ -15,9 +15,31 @@ PROJECTS = [
 
  # ---------------- 2026 ----------------
 
+ dict(slug='big-red-flags', title='Big Red Flags', year='NOV 2026', kind='DATA',
+   stack='PYTHON · WIKIPEDIA API · WIKIDATA SPARQL · D3 · GITHUB ACTIONS',
+   kao='⋆.˚🚩 ₊˚⊹',
+   blurb='Public figures named in the Epstein files and other scandals, mapped by the colleges, fraternities and clubs they share.',
+   rant='A network of public figures named in the Epstein files and in other high-profile scandals, linked by the colleges, Ivy League schools, fraternities, sororities and secret societies they have in common. Search a name or a school, filter down to Ivy-only or shared links, and every person has their sources attached.\n\nThere is no server and no database. A weekly GitHub Action runs the Python pipeline against Wikipedia and Wikidata, commits the JSON, and GitHub Pages serves a static D3 site. Being named in these documents does not imply wrongdoing, and the site says so.',
+   links=[('LIVE SITE','https://grmpyktn11.github.io/big-red-flags/'),
+          ('GITHUB','https://github.com/grmpyktn11/big-red-flags')]),
+
+ dict(slug='company-store', title='Company Store', year='NOV 2026', kind='WEB',
+   stack='REACT · TYPESCRIPT · EXPRESS · SHOPIFY STOREFRONT API',
+   kao='⋆.˚🛍️ ₊˚⊹',
+   blurb='A minimal order form in front of Shopify: employees pick merch, then check out on Shopify&rsquo;s hosted checkout.',
+   rant='A small internal store. Employees pick items and quantities on a plain React order form, and the Express server turns that into a Shopify cart and hands back the hosted checkout. Shopify owns the cart, the payment and the order; Shopify Flow sends the confirmation email.\n\nThe whole point was to write as little commerce code as possible. The server is the only thing that holds a Storefront token, and the client never talks to Shopify directly. The demo runs against mock products.',
+   links=[]),
+
+ dict(slug='api-vs-local', title='API vs Local', year='SEP 2026', kind='DEMO',
+   stack='PYTHON · FASTAPI · WEBSOCKETS · SQLITE',
+   kao='⋆.˚📡 ₊˚⊹',
+   blurb='A fake phone streams motion data to a telemetry app, to show when one request per sample falls over and a file upload or a cache wins.',
+   rant='A teaching demo. One app pretends to be a phone streaming accelerometer samples; the other is the telemetry server. Send one API request per sample at 200 Hz with a bit of latency and you watch the queue go red and keep draining long after you hit Stop. Switch to writing a file and uploading once, and the same recording costs one request and no wait.\n\nThe last part is reads: open a recording once and it goes to the database, open it again and it comes out of the cache instantly. Three ideas, each one visible as a number moving on screen.',
+   links=[('GITHUB','https://github.com/grmpyktn11/api-vs-local-demo')]),
+
  dict(slug='flock-off', title='flock-off', year='SEP 2026', kind='TOOL',
    stack='PYTHON · OPENSTREETMAP · ROUTING',
-   kao='[ ◉¯] ✧˖°',
+   kao='[ ◉¯] ✧˖°', tall=True,
    blurb='Navigation that routes around ALPR and speed cameras, then hands the trip to Google Maps. Names who runs each camera.',
    rant='Automatic licence plate readers are everywhere now and almost nobody knows where they are or who operates them. This maps the surveillance grid from public OpenStreetMap data, routes you around it, and then hands the finished trip off to Google Maps so you can actually drive it.\n\nIt also names who runs each camera, because "there is a camera here" is much less useful than "there is a camera here and this is the company collecting it".',
    links=[('GITHUB','https://github.com/grmpyktn11/flock-off')]),
@@ -28,6 +50,13 @@ PROJECTS = [
    blurb='Pulls restaurant mentions out of Instagram, Discord, WhatsApp and SMS, then matches them against a preference profile built from your order history.',
    rant='Everyone I know has the same problem: a friend sends you a restaurant, you say "oh that looks good", and then it disappears into a group chat forever. Nibbler goes and finds those mentions across Instagram, Discord, WhatsApp and SMS, parses them with an LLM, and keeps them somewhere you will actually look.\n\nThe interesting half is the matching. It builds a preference profile out of your order history and spending patterns in Postgres with vector search, then uses MCP connectors and a calendar API to pull in real restaurant data and factor in when you are actually free. You get menu suggestions and a cost estimate per visit rather than a list of names.\n\nThere is also a sponsored-placement layer where restaurants can bid on recommendation visibility, which is the part that could pay for itself.',
    links=[('GITHUB','https://github.com/grmpyktn11')]),
+
+ dict(slug='shopper', title='Shopper', year='AUG 2026', kind='AI',
+   stack='PYTHON · FASTAPI · REACT · SQLITE · CLAUDE',
+   kao='⋆.˚🛒 ₊˚⊹',
+   blurb='Describe what you want in a sentence; it searches four retailers, reads Reddit and YouTube, and tells you which to buy and why.',
+   rant='You type what you want in one sentence. If something important is missing it asks you one question first, then searches Best Buy, Target, Amazon and Micro Center at once, researches the best candidates on Reddit and YouTube, ranks them, and tells you which one to buy and why.\n\nTrack anything and it re-checks the price every six hours and emails you when it drops. FastAPI and React over SQLite, with Claude making the judgment calls. A search takes about eighty seconds, nearly all of it waiting on retailers.',
+   links=[('GITHUB','https://github.com/grmpyktn11/price-checker')]),
 
  dict(slug='firstpick', title='FirstPick', year='AUG 2026', kind='TOOL',
    stack='MYSQL · SCRAPING · CLEVERCLOUD',
@@ -144,7 +173,7 @@ PROJECTS = [
 
  dict(slug='card-counter', title='Card Counter', year='JUN 2024', kind='TOOL',
    stack='OPENCV · PYTESSERACT',
-   kao='⋆⁺₊⋆🂲🃍🂶⋆⁺₊⋆',
+   kao='⋆⁺₊⋆🂲🃍🂶⋆⁺₊⋆', yt='c5HoqhqTWB0',
    blurb='Photograph a card, OCR it, and see how many are left in the deck. Built for a professor&rsquo;s research.',
    rant='Built for a professor&rsquo;s research. Take a picture of a card, OpenCV finds and cleans it up, PyTesseract reads it, and the app tells you how many of that card are left in the deck.\n\nMy first real lesson in how much of computer vision is preprocessing rather than the clever bit at the end.',
    links=[('GITHUB','https://github.com/grmpyktn11/Pokemon-Card-Counter')]),

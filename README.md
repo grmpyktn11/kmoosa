@@ -32,24 +32,27 @@ Project content lives in one place: **`tools/projects_data.py`**.
 python tools/gen_site.py
 ```
 
-That rewrites `projects.html` and all 22 `project-*.html` pages. The order of the
+That rewrites `projects.html` and all 25 `project-*.html` pages. The order of the
 list in that file is the order on the site, currently newest first — move a dict
 to move a tile.
 
 Each entry takes a slug, title, year, kind, stack, kaomoji, a short blurb for the
 tile, longer notes for the detail page, and a list of `(label, url)` links.
 
-## Adding a video to a project page
+## Demo videos
 
-Every detail page has the markup commented out already:
+Drop `video/<slug>.mp4` (and `video/<slug>.jpg` as its poster) in and re-run
+`gen_site.py`. The detail page swaps its still for the video, which autoplays
+muted and looped (paused under `prefers-reduced-motion`), and the gallery tile
+gets a `▶ DEMO` tag.
 
-```html
-<video src="video/<slug>.mp4" poster="video/<slug>.jpg"
-       controls muted loop playsinline preload="metadata"></video>
-```
+- `yt='<id>'` on a project embeds that YouTube video instead.
+- `tall=True` gives a portrait recording a portrait frame.
+- Without either, the still in `img/shots/<slug>.<ext>` is used, then the
+  placeholder.
 
-Uncomment it, drop the file in `video/`, and delete the `.no-video` block above
-it. Do it in `tools/gen_site.py` if you want it on every page.
+Most of the clips were recorded with Playwright against each project's own
+front end, with its backend mocked where it needs keys or a database.
 
 ## Notes
 
